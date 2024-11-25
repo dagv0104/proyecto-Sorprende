@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="./output.css" rel="stylesheet">
+    <title>Desayunos Sorpresa - Sorprende C.A.</title>
+</head>
+<body class="bg-rose-300">
+    <header class="bg-sky-400 fixed flex justify-start w-full">
+        <nav class="flex relative">
+            <div class="pr-72 pl-8">
+                <img class="h-32 w-32 rounded-full" src="images/IMG-20241118-WA0003.jpg" alt="">
+            </div>
+            <div class="space-y-4">
+                <div class="pl-96 pt-7">
+                    <h1 class="text-6xl text-white">Desayunos Sorpresa</h1>
+                </div>
+                <div>
+                    <ul class="text-white text-xl">
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="index.html" target="_blank">Inicio</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="cumpleaños.html" target="_blank">Cumpleaños</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="navidad.html" target="_blank">Navidad</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="dia_de_las_madres.html" target="_blank">Día de las madres</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="dia_del_padre.html" target="_blank">Día del padre</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="dia_del_nino.html" target="_blank">Día del niño</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="baby_shower.html" target="_blank">Baby shower</a></li>
+                        <li class="hover:p-1 hover:border-l-4 hover:border-r-4 hover:border-rose-300 hover:ease-in duration-200"><a href="san_valentin.html" target="_blank">San Valentín</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-48">
+        <section class="text-white">
+            <h2>Arreglos Disponibles para Desayunos Sorpresa</h2>
+            <br>
+            <h2>Seleccione el de su preferencia</h2>
+            <div class="contenedores">
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="" alt="Referencia">
+                    </div>
+                    <div class="descripcion">
+                        <h2>
+                            Modelo #1
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="" alt="Referencia">
+                    </div>
+                    <div class="descripcion">
+                        <h2>
+                            Modelo #2
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="" alt="Referencia">
+                    </div>
+                    <div class="descripcion">
+                        <h2>
+                            Modelo #3
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="" alt="Referencia">
+                    </div>
+                    <div class="descripcion">
+                        <h2>
+                            Modelo #4
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="" alt="Referencia">
+                    </div>
+                    <div class="descripcion">
+                        <h2>
+                            Modelo #5
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="" alt="Referencia">
+                    </div>
+                    <div class="descripcion">
+                        <h2>
+                            Modelo #6
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order-section">
+            <h3 class="text-white">Ingresa tu nombre para registrar tu pedido</h3>
+            <br>
+            <form id="order-form" onsubmit="handleOrder(event)">
+                <input type="text" id="customer-name" placeholder="Tu nombre" required>
+                <button class="border-2 rounded-lg w-32 border-sky-400 text-white" type="submit">Realizar Pedido</button>
+            </form>
+            <div id="order-summary"></div>
+        </section>
+        <br>
+        <p>
+            "Todo lo que la mente puede concebir y creer, puede lograrlo." - Napoleon Hill
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sorprende C.A. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function handleOrder(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+            const customerName = document.getElementById('customer-name').value;
+
+            // Solicitar descripción adicional
+            const additionalInfo = prompt("Por favor, agrega una descripción o detalles adicionales para tu pedido:");
+
+            if (additionalInfo) {
+                // Aquí podrías manejar el pedido como desees (enviar a un servidor, etc.)
+                alert(`Pedido realizado, muchas gracias ${customerName}!`);
+            } else {
+                alert("No se agregó información adicional.");
+            }
+
+            // Limpiar el formulario
+            document.getElementById('order-form').reset();
+        }
+    </script>
+</body>
+</html>
